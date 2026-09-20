@@ -3,12 +3,14 @@ CareLoop verification record
 
 Changed branch/field
 --------------------
-Branch: `/Users/chipichipi/Documents/CareLoop/src/App.tsx` and `/Users/chipichipi/Documents/CareLoop/src/styles.css`.
-Fields: readable global typography, stronger text contrast, accessible SVG response trend, chart label sizing, analytics card spacing, full-width Staff workload section, plus the existing unified top header/navigation alignment.
-Previous modified App hash: `3759cb1294eac84a313ac4ff4ff55f1d8fb8bd0fac5fb339b7d802b73e4937a3`.
-Previous modified styles hash: `655dc018f8a9f919fcdec3f962ec8d3d5e5b4211e0da0ff77ecd321526a20797`.
-Current App hash: `12f1f075b8e9fef4f35c14b204bb595076bb7e63`.
-Current styles hash: `458787183d82a9db5600a74b1b86ef7589e4ce9b`.
+Branch: `/Users/chipichipi/Documents/CareLoop/src/App.tsx`, `/Users/chipichipi/Documents/CareLoop/src/data.ts`, and `/Users/chipichipi/Documents/CareLoop/src/styles.css`.
+Fields: backend-ready empty initial state, zero-valued overview/analytics metrics, empty tables and charts, removal of demo-only content, and responsive header overlap prevention.
+Baseline App hash: `12f1f075b8e9fef4f35c14b204bb595076bb7e63`.
+Baseline data hash: `4f0aa11f21bc960b1c22924f093b3291b847c105`.
+Baseline styles hash: `458787183d82a9db5600a74b1b86ef7589e4ce9b`.
+Modified App hash: `58fcccc015d7a2bccf535a41b2f74889e35e64c3`.
+Modified data hash: `86ed53c62339e3e24f7b0323691af4d45e9ba613`.
+Modified styles hash: `fca8b7938dc2d1b33efc2fdf56b9c7e5ed6f993c`.
 Four artifacts:
 - `/Users/chipichipi/Documents/CareLoop/artifacts/MODIFIED_FILE.md`
 - `/Users/chipichipi/Documents/CareLoop/artifacts/DIFF_FILE.patch`
@@ -22,7 +24,7 @@ Exact command:
 Exact input:
 (no stdin)
 Literal output/result:
-`TypeScript check passed; vite build passed; dist/index.html 0.46 kB; dist/assets/index-CI6R6lTa.css 48.94 kB; dist/assets/index-DBvtMeLy.js 282.67 kB`
+`TypeScript check passed; vite build passed; dist/index.html 0.46 kB; dist/assets/index-Dw5ME2hg.css 51.28 kB; dist/assets/index-BnVPjzXL.js 283.06 kB`
 Exit status: `0`
 
 MODIFIED
@@ -32,7 +34,7 @@ Exact command:
 Exact input:
 (no stdin)
 Literal output/result:
-`TypeScript check passed; vite build passed; dist/index.html 0.46 kB; dist/assets/index-DOEZyDpt.css 51.28 kB; dist/assets/index-BnVPjzXL.js 283.06 kB; ✓ built in 220ms`
+`TypeScript check passed; vite build passed; dist/index.html 0.46 kB; dist/assets/index-Dw5ME2hg.css 52.37 kB; dist/assets/index-CJG4tEkE.js 277.62 kB; ✓ built in 224ms`
 Exit status: `0`
 
 ROLLBACK
@@ -49,42 +51,14 @@ Exit status: `0`
 
 UI verification
 ---------------
-Exact input/result: Chrome opened `http://127.0.0.1:5174/analytics` after the Vite reload.
-Observed result: the header kept one visible navigation row; the analytics page showed readable KPI cards, visible bar chart, high-contrast donut chart, SVG response/follow-up trend with two lines and points, and Staff workload labels/values. The accessibility tree exposed the trend as `Response and follow-up trend over seven days` and exposed all four workload rows.
+Exact input/result: Chrome opened `http://127.0.0.1:5174/overview` and `http://127.0.0.1:5174/analytics` after the Vite reload.
+Observed result: the header showed Overview, Follow-ups, Patients, Communication, Reschedule Requests, Tasks, Analytics, Search, zero notifications, Account, and Settings without the Analytics label sitting under the search control. Overview counters were all `0`; queue, attention, and activity sections showed backend connection empty states. Analytics showed `0`, `0%`, `0`, `0%`, a neutral zero donut, and empty volume/trend/workload states.
 Status: passed.
 
 Additional checks
 -----------------
 Exact command:
-`grep -RniE "diagnos|risk score|clinical risk|treatment recommendation|medicine|dosage|medical advice|disease prediction|clinical decision|lab interpretation|upload" src public index.html package.json || true`
+`grep -RniE "demo|fictional|P-[0-9]|Dr\\. Meera|Coordinator [A-Z]|20 Sep|22 Sep|24 Sep|38|71%|Demo Clinic" src/App.tsx src/data.ts || true`
 Literal output/result:
-`no matches`
+`(no output)`
 Exit status: `0`
-
-GITHUB PUSH
------------
-Exact command:
-`git add .gitignore index.html package.json package-lock.json public src artifacts tsconfig.app.json tsconfig.json vite.config.ts && git commit -m "Polish CareLoop analytics and dashboard typography" && git branch -M main && git remote add origin https://github.com/kollisathwikkumar/CareLoop.git && git push -u origin main`
-Exact input:
-(no stdin)
-Literal output/result:
-`[main (root-commit) 4d488c6] Polish CareLoop analytics and dashboard typography`
-`To https://github.com/kollisathwikkumar/CareLoop.git`
-`* [new branch] main -> main`
-`branch 'main' set up to track 'origin/main'.`
-Exit status: `0`
-
-FINAL GITHUB SYNC
------------------
-After the verification record was added, the amended commit replaced the already-pushed root commit.
-Exact command:
-`git push --force-with-lease origin main && git status --short --branch && git log -1 --oneline`
-Exact input:
-(no stdin)
-Literal output/result:
-`To https://github.com/kollisathwikkumar/CareLoop.git`
-`+ 4d488c6...bbd25aa main -> main (forced update)`
-`## main...origin/main`
-`bbd25aa Polish CareLoop analytics and dashboard typography`
-Exit status: `0`
-Final remote behavior/status: GitHub `main` points to the pushed CareLoop implementation and local `main` is synchronized with `origin/main`.

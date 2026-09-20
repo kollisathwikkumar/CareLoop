@@ -447,3 +447,27 @@ body {
   .chart-grid > .chart-panel:last-child { grid-column: auto; }
   .chart-panel { min-height: 280px; }
 }
+
+/* Empty integration state and responsive header collision fix */
+.metric-pending { color: #718499 !important; }
+.analytics-empty { min-height: 220px; display: grid; place-items: center; align-content: center; gap: 8px; padding: 28px; text-align: center; color: #8aa0b7; }
+.analytics-empty svg { color: #8eb2e5; }
+.analytics-empty strong { color: #526a82; font-size: 14px; }
+.analytics-empty span { max-width: 320px; color: #8aa0b7; font-size: 11px; line-height: 1.5; }
+.trend-empty { min-height: 238px; }
+.donut-empty::after { background: #fff; }
+.empty-state { min-height: 180px; }
+.kpi-trend.muted { color: #7f92a6; }
+@media (min-width: 981px) and (max-width: 1380px) {
+  .sidebar { gap: 4px; padding-inline: 8px; }
+  .sidebar-top { min-width: 0; overflow: hidden; gap: 4px; }
+  .sidebar-nav { min-width: 0; flex: 1 1 auto; overflow: hidden; gap: 1px; }
+  .nav-item { min-width: 0; padding-inline: 5px; gap: 4px; font-size: 10px; }
+  .nav-item svg { width: 15px; height: 15px; }
+  .nav-item > span:not(.nav-count) { overflow: hidden; text-overflow: ellipsis; }
+  .sidebar > .topbar { flex: 0 0 auto; margin-left: 4px; }
+  .sidebar > .topbar .topbar-actions { gap: 1px; }
+  .sidebar > .topbar .search-trigger { width: 96px; flex: 0 0 96px; padding-inline: 7px; }
+  .sidebar > .topbar .search-trigger span { max-width: 32px; }
+  .sidebar > .topbar .top-profile span { display: none; }
+}

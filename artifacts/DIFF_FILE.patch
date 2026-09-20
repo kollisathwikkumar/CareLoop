@@ -1,23 +1,37 @@
+--- /Users/chipichipi/Documents/CareLoop/src/data.ts (before)
++++ /Users/chipichipi/Documents/CareLoop/src/data.ts (after)
+@@
+-export const initialPatients = [seeded patient records]
+-export const initialCommunications = [seeded communication records]
+-export const initialTasks = [seeded task records]
+-export const initialReschedules = [seeded reschedule records]
+-export const initialNotifications = [seeded notifications]
+-export const initialActivity = [seeded activity records]
++export const initialPatients: Patient[] = []
++export const initialCommunications: Communication[] = []
++export const initialTasks: Task[] = []
++export const initialReschedules: RescheduleRequest[] = []
++export const initialNotifications: Notification[] = []
++export const initialActivity: Activity[] = []
++export const staff: string[] = []
+
 --- /Users/chipichipi/Documents/CareLoop/src/App.tsx (before)
 +++ /Users/chipichipi/Documents/CareLoop/src/App.tsx (after)
 @@
--function LineChart() { return <div className="line-chart">...diagonal placeholder... </div> }
-+function LineChart() {
-+  render the response and follow-up series as an accessible SVG chart
-+  render plotted points, grid lines, shaded follow-up area, and date labels
-+}
+-Overview and analytics used hardcoded offsets, IDs, people, dates, chart series, and demo profile values.
++Overview and analytics derive counters from empty state and render zero/connection-ready empty states.
 @@
--analytics chart grid ended with a narrow Staff workload card
-+Staff workload spans the available analytics width
+-Header navigation overflowed into the search control at narrower desktop widths.
++Header navigation is clipped within its flex region and utilities keep a reserved width.
+@@
+-Demo portal/settings/template content was rendered as application data.
++Portal, settings, templates, and communication views wait for backend records/configuration.
 
 --- /Users/chipichipi/Documents/CareLoop/src/styles.css (before)
 +++ /Users/chipichipi/Documents/CareLoop/src/styles.css (after)
 @@
--low-contrast 8px-10px chart and metadata text
-+antialiased system UI typography with darker colors and 11px minimum analytics labels
+-search control could cover the Analytics navigation label
++responsive desktop header rules prevent overlap and compact utilities at 981-1380px
 @@
--diagonal CSS line placeholder
-+SVG trend chart styling with visible axes, lines, points, and shaded area
-@@
--empty lower-right analytics column
-+full-width Staff workload panel with larger bars and readable labels
+-no empty analytics visualization state
++clear empty chart messaging and neutral zero-status donut styling
