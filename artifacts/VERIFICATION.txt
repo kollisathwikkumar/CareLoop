@@ -77,3 +77,49 @@ Literal output/result:
 `816671b Prepare empty backend integration state`
 Exit status: `0`
 Final remote behavior/status: GitHub `main` contains the zeroed backend-ready implementation and local `main` is synchronized with `origin/main`.
+
+LATEST FIX: DONUT CENTERING
+---------------------------
+Changed branch/field: `/Users/chipichipi/Documents/CareLoop/src/App.tsx` and `/Users/chipichipi/Documents/CareLoop/src/styles.css`; `DonutChart` markup and `.donut-label` positioning.
+Baseline App hash: `58fcccc015d7a2bccf535a41b2f74889e35e64c3`.
+Baseline styles hash: `fca8b7938dc2d1b33efc2fdf56b9c7e5ed6f993c`.
+Modified App hash: `5acc75bdcb6bb282c4c472fa69f37e7e7eded625`.
+Modified styles hash: `d366643d07cc0862196eb327bcd429b5e966bf79`.
+
+BASELINE
+--------
+Exact command:
+`npm run typecheck && npm run build`
+Exact input:
+(no stdin)
+Literal output/result:
+`TypeScript check passed; vite build passed; dist/assets/index-Dw5ME2hg.css 52.37 kB; dist/assets/index-CJG4tEkE.js 277.62 kB`
+Exit status: `0`
+
+MODIFIED
+--------
+Exact command:
+`npm run typecheck && npm run build`
+Exact input:
+(no stdin)
+Literal output/result:
+`TypeScript check passed; vite build passed; dist/index.html 0.46 kB; dist/assets/index-4Kh5pWb_.css 52.73 kB; dist/assets/index-QVvhNULJ.js 277.68 kB; ✓ built in 293ms`
+Exit status: `0`
+
+ROLLBACK
+--------
+Exact command:
+`cp artifacts/MODIFIED_FILE.md /tmp/careloop-rollback-copy.md && artifacts/ROLLBACK.sh /tmp/careloop-rollback-copy.md && cat /tmp/careloop-rollback-copy.md`
+Exact input:
+`/tmp/careloop-rollback-copy.md`
+Literal output/result:
+`ROLLBACK_RESTORED: /tmp/careloop-rollback-copy.md`
+`CareLoop artifact baseline`
+Restored behavior/status: the separate copy returned to the baseline fixture; `/Users/chipichipi/Documents/CareLoop/artifacts/MODIFIED_FILE.md` remained changed.
+Exit status: `0`
+
+UI verification
+---------------
+Exact input/result: Chrome opened `http://127.0.0.1:5174/analytics` after Vite reload.
+Observed result: the `0` and `Total` labels are centered inside the donut ring, independent of the right-side legend. Accessibility output exposes `0 Total` as one centered visual group.
+Status: passed.

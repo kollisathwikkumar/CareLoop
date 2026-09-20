@@ -11,3 +11,5 @@ Modified file paths:
 - `/Users/chipichipi/Documents/CareLoop/src/App.tsx`
 - `/Users/chipichipi/Documents/CareLoop/src/data.ts`
 - `/Users/chipichipi/Documents/CareLoop/src/styles.css`
+
+Latest fix: the analytics donut total is now centered inside a dedicated 144px visual wrapper, so the legend width cannot offset the `0` and `Total` labels.

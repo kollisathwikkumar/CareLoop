@@ -35,3 +35,15 @@
 @@
 -no empty analytics visualization state
 +clear empty chart messaging and neutral zero-status donut styling
+
+--- /Users/chipichipi/Documents/CareLoop/src/App.tsx (latest fix)
++++ /Users/chipichipi/Documents/CareLoop/src/App.tsx (latest fix)
+@@
+-<div className="donut">...</div><div className="donut-label">...</div>
++<div className="donut-visual"><div className="donut">...</div><div className="donut-label">...</div></div>
+
+--- /Users/chipichipi/Documents/CareLoop/src/styles.css (latest fix)
++++ /Users/chipichipi/Documents/CareLoop/src/styles.css (latest fix)
+@@
+-.donut-label used absolute coordinates relative to the full chart layout
++.donut-visual owns the ring and centers the total with flex alignment
