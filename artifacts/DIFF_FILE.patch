@@ -1,0 +1,23 @@
+--- /Users/chipichipi/Documents/CareLoop/src/App.tsx (before)
++++ /Users/chipichipi/Documents/CareLoop/src/App.tsx (after)
+@@
+-function LineChart() { return <div className="line-chart">...diagonal placeholder... </div> }
++function LineChart() {
++  render the response and follow-up series as an accessible SVG chart
++  render plotted points, grid lines, shaded follow-up area, and date labels
++}
+@@
+-analytics chart grid ended with a narrow Staff workload card
++Staff workload spans the available analytics width
+
+--- /Users/chipichipi/Documents/CareLoop/src/styles.css (before)
++++ /Users/chipichipi/Documents/CareLoop/src/styles.css (after)
+@@
+-low-contrast 8px-10px chart and metadata text
++antialiased system UI typography with darker colors and 11px minimum analytics labels
+@@
+-diagonal CSS line placeholder
++SVG trend chart styling with visible axes, lines, points, and shaded area
+@@
+-empty lower-right analytics column
++full-width Staff workload panel with larger bars and readable labels

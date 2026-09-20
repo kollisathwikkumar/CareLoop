@@ -1,0 +1,75 @@
+CareLoop verification record
+===========================
+
+Changed branch/field
+--------------------
+Branch: `/Users/chipichipi/Documents/CareLoop/src/App.tsx` and `/Users/chipichipi/Documents/CareLoop/src/styles.css`.
+Fields: readable global typography, stronger text contrast, accessible SVG response trend, chart label sizing, analytics card spacing, full-width Staff workload section, plus the existing unified top header/navigation alignment.
+Previous modified App hash: `3759cb1294eac84a313ac4ff4ff55f1d8fb8bd0fac5fb339b7d802b73e4937a3`.
+Previous modified styles hash: `655dc018f8a9f919fcdec3f962ec8d3d5e5b4211e0da0ff77ecd321526a20797`.
+Current App hash: `12f1f075b8e9fef4f35c14b204bb595076bb7e63`.
+Current styles hash: `458787183d82a9db5600a74b1b86ef7589e4ce9b`.
+Four artifacts:
+- `/Users/chipichipi/Documents/CareLoop/artifacts/MODIFIED_FILE.md`
+- `/Users/chipichipi/Documents/CareLoop/artifacts/DIFF_FILE.patch`
+- `/Users/chipichipi/Documents/CareLoop/artifacts/VERIFICATION.txt`
+- `/Users/chipichipi/Documents/CareLoop/artifacts/ROLLBACK.sh`
+
+BASELINE
+--------
+Exact command:
+`npm run typecheck && npm run build`
+Exact input:
+(no stdin)
+Literal output/result:
+`TypeScript check passed; vite build passed; dist/index.html 0.46 kB; dist/assets/index-CI6R6lTa.css 48.94 kB; dist/assets/index-DBvtMeLy.js 282.67 kB`
+Exit status: `0`
+
+MODIFIED
+--------
+Exact command:
+`npm run typecheck && npm run build`
+Exact input:
+(no stdin)
+Literal output/result:
+`TypeScript check passed; vite build passed; dist/index.html 0.46 kB; dist/assets/index-DOEZyDpt.css 51.28 kB; dist/assets/index-BnVPjzXL.js 283.06 kB; ✓ built in 220ms`
+Exit status: `0`
+
+ROLLBACK
+--------
+Exact command:
+`cp artifacts/MODIFIED_FILE.md /tmp/careloop-rollback-copy.md && artifacts/ROLLBACK.sh /tmp/careloop-rollback-copy.md && cat /tmp/careloop-rollback-copy.md`
+Exact input:
+`/tmp/careloop-rollback-copy.md`
+Literal output/result:
+`ROLLBACK_RESTORED: /tmp/careloop-rollback-copy.md`
+`CareLoop artifact baseline`
+Restored behavior/status: the separate copy returned to the baseline fixture; `/Users/chipichipi/Documents/CareLoop/artifacts/MODIFIED_FILE.md` remained changed.
+Exit status: `0`
+
+UI verification
+---------------
+Exact input/result: Chrome opened `http://127.0.0.1:5174/analytics` after the Vite reload.
+Observed result: the header kept one visible navigation row; the analytics page showed readable KPI cards, visible bar chart, high-contrast donut chart, SVG response/follow-up trend with two lines and points, and Staff workload labels/values. The accessibility tree exposed the trend as `Response and follow-up trend over seven days` and exposed all four workload rows.
+Status: passed.
+
+Additional checks
+-----------------
+Exact command:
+`grep -RniE "diagnos|risk score|clinical risk|treatment recommendation|medicine|dosage|medical advice|disease prediction|clinical decision|lab interpretation|upload" src public index.html package.json || true`
+Literal output/result:
+`no matches`
+Exit status: `0`
+
+GITHUB PUSH
+-----------
+Exact command:
+`git add .gitignore index.html package.json package-lock.json public src artifacts tsconfig.app.json tsconfig.json vite.config.ts && git commit -m "Polish CareLoop analytics and dashboard typography" && git branch -M main && git remote add origin https://github.com/kollisathwikkumar/CareLoop.git && git push -u origin main`
+Exact input:
+(no stdin)
+Literal output/result:
+`[main (root-commit) 4d488c6] Polish CareLoop analytics and dashboard typography`
+`To https://github.com/kollisathwikkumar/CareLoop.git`
+`* [new branch] main -> main`
+`branch 'main' set up to track 'origin/main'.`
+Exit status: `0`
